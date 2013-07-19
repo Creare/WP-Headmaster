@@ -4,12 +4,12 @@
     Plugin URI: https://www.creare.co.uk/services/wp-headmaster
     Description: A simple plugin for adding, enqueuing and organising common items into the Head tag without hard-coding.
     Author: James Bavington
-    Version: 0.1
-    Author URI: http://www.creare.co.uk/
+    Version: 0.2
+    Author URI: http://www.creare.co.uk/author/james-bavington
     */   
 
 
-	/*  Copyright 2013  BAVINGTON  (email : james@creare.co.uk)
+	/*  Copyright 2013  BAVINGTON, CREAREGROUP  (email : james@creare.co.uk)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -59,6 +59,7 @@ function admin_js_styles() {
 
 function headmaster_theme_options_init(){
     register_setting( 'headmaster_myoption_group', 'ga_profile' );
+    register_setting( 'headmaster_myoption_group', 'wp_headmaster_ga_choice' );
     register_setting( 'headmaster_myoption_group', 'inline_styles' );
     register_setting( 'headmaster_myoption_group', 'wp_headmaster_favicon' );
     register_setting( 'headmaster_myoption_group', 'wp_headmaster_meta_author' );
@@ -72,10 +73,18 @@ function headmaster_theme_options_init(){
 } 
 
  $deployga = get_option('ga_profile');
+ $ga_choice = get_option('wp_headmaster_ga_choice');
 
- if ($deployga !="") { 
+ if ($deployga !="" & $ga_choice !="0" ) { 
  	add_action('wp_head', 'add_analytic', '999'); 
  }
+
+ if ($deployga !="" & $ga_choice =="0" ) { 
+    add_action('wp_head', 'add_new_analytic', '999'); 
+ }
+
+
+
 
  $inline_style_check = get_option('inline_styles');
 
@@ -143,6 +152,19 @@ function add_analytic() { ?>
 	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
+</script>
+<?php } 
+
+function add_new_analytic() { ?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '<?php echo get_option('ga_profile'); ?>', '<?php echo str_replace('www.','',$_SERVER['HTTP_HOST']); ?>');
+  ga('send', 'pageview');
+
 </script>
 <?php } 
 

@@ -1,10 +1,10 @@
 === Plugin Name ===
-Contributors: bavington
+Contributors: bavington, crearegroup
 Donate link: http://www.creare.co.uk/
 Tags: SEO, jQuery, Google Fonts, Meta Author, Responsive, Google Analytics, Inline, head
 Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 0.1
+Tested up to: 3.5.2
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,15 +12,18 @@ A simple plugin for adding, enqueuing and organising common items into the Head 
 
 == Description ==
 
-WP Headmaster is a free plugin to help webmasters correctly include, organise and enqueue common items into your theme's head tag. WP Headmaster has been designed to work perfectly alongside other popular plugins like Yoast's Wordpress SEO, without any cross-over. WP Headmaster will continue to develop, but at present comes with the following features:
+WP Headmaster is a free plugin to help correctly include, organise and enqueue common items into your theme's head tag. WP Headmaster has been designed to work perfectly alongside other popular plugins like Yoast's Wordpress SEO, without any cross-over. WP Headmaster will continue to develop, but at present comes with the following features:
 
-* Google Analytics - Simply add in your unique tracking ID and the GA tracking code will be added last within the head.
+* Google Analytics - Simply add in your unique tracking ID and select from either Universal or Classic tracking. The GA tracking code will be added last within the head.
 * Inline JavaScript - If you wish to add any inline JavaScript to your <head> simply include it in the field.
 * Icons - Upload your website's Favicon and Apple Touch Icon.
 * jQuery - Choose to include jQuery either locally or from Google's hosted API.
 * Responsive Polyfills - Tick to enable popular CSS3 Media Query Polyfills.
 * Google Web Fonts - Include and enqueue your chosen Google Web Fonts.
 * Meta Author Tag - Specify a site-wide Meta Author Tag, or enable the Dynamic Author mode, perfect for collaborations.
+
+You can learn more about [WP Headmaster](http://www.creare.co.uk/services/wp-headmaster) and our [other free Wordpress plugins](http://www.creare.co.uk/services/extensions/wordpress) on our website. You can also track progress and contribute to [WP Headmaster on GitHub](https://github.com/Creare/WP-Headmaster).
+
 
 == Installation ==
 
@@ -44,6 +47,11 @@ You can either disable the plugin, or empty all fields within the WP Headmaster 
 4. The final tab 'Meta Data' allows you to specify either a site-wide Meta Author or a dynamic one.
 
 == Changelog ==
+
+= 0.2 =
+
+* Option to select the new Universal (beta) Google Analytics tracking code.
+* Removed the Assets folder that shouldn't be there.
 
 = 0.1 =
 

@@ -24,13 +24,24 @@
                             <table class="form-table">
                                 <tbody>
                                     <tr valign="top">
-                                    <th scope="row">Unique Tracking Code</th>
+                                    <th scope="row">Unique Tracking ID</th>
                                         <td>
-                                           <input type="text" name="ga_profile" value="<?php echo get_option('ga_profile'); ?>" /><br />
+                                           <input type="text" name="ga_profile" value="<?php echo get_option('ga_profile'); ?>" placeholder="UA-XXXXXXXX-X" /><br />
                                            <span class="description">To add Google Analytics tracking to your website, please enter your unique GA tracking code.</span>
 
                                         </td>
                                     </tr>
+
+
+                                    <tr valign="top">
+                                    <th scope="row">Code Choice</th>
+                                        <td>
+                                           <input name="wp_headmaster_ga_choice" type="radio" value="0" <?php checked( '0', get_option( 'wp_headmaster_ga_choice' ) ); ?> /> Use the new Universal (Beta) Tracking Code (Recommended)<br />
+                                           <input name="wp_headmaster_ga_choice" type="radio" value="1" <?php checked( '1', get_option( 'wp_headmaster_ga_choice' ) ); ?> /> Use the Classic Analytics Tracking Code
+
+                                        </td>
+                                    </tr>
+
                                 </tbody>
                             </table>       
                     </div>                 
