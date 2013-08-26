@@ -16,13 +16,16 @@ WP Headmaster is fully configurable through the settings panel within the Wordpr
 * Google Web Fonts
 * Meta Author Tag
 
+WP Headmaster has been designed to work perfectly alongside other popular plugins like [Yoast's Wordpress SEO](http://wordpress.org/plugins/wordpress-seo/).
+
 Updates
 =======
 
-WP Headmaster is currently in its' first release, however many more features and updates are planned.
+* 0.2 - Google Analytics Universal Tracking Code option has been added.
+* 0.1 - Initial Release.
 
 Who's it by?
 ============
 
-WP Headmaster is a completely free, open source Wordpress Plugin by Creare's [James Bavington](http://twitter.com/jamesbavington).
+WP Headmaster is a completely free, open source Wordpress Plugin by [Creare's](http://www.creare.co.uk) [James Bavington](http://twitter.com/jamesbavington).
 
